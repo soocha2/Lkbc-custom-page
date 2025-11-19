@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lakewood Baptist Church - Louisville, KY</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        /* CSS Reset and Variables */
+        :root {
+            --primary-color: #3b5998; /* Deep Blue, often associated with trust/faith */
+            --secondary-color: #F8B400; /* Warm Accent Gold */
+            --text-dark: #333333;
+            --text-light: #f5f5f5;
+            --bg-light: #ffffff;
+            --bg-cream: #f4f4f4;
+            --font-serif: 'Playfair Display', serif;
+            --font-sans: 'Poppins', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+
+        h1, h2, h3 {
+            font-family: var(--font-serif);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: var(--secondary-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 2rem;
+            border-radius: 5px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background-color 0.3s, color 0.3s;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+        }
+
+        .btn-primary:hover {
+            background-color: #2c4573;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+        }
+
+        /* ------------------- HEADER / NAVIGATION ------------------- */
+        .header {
+            background-color: var(--bg-light);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1rem;
+        }
+
+        .logo {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links a {
+            padding: 0.5rem 1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+        
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* ------------------- HERO SECTION ------------------- */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), 
+                        url('https://picsum.photos/1600/900?random=1') center/cover no-repeat;
+            color: var(--text-light);
+            text-align: center;
+            padding: 8rem 1rem;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            color: var(--secondary-color);
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            font-weight: 300;
+        }
+
+        /* ------------------- TIMES & VISIT SECTION ------------------- */
+        .times-section {
+            background-color: var(--bg-cream);
+            text-align: center;
+        }
+
+        .times-grid {
+            display: flex;
+            justify-content: space-around;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .time-card {
+            background-color: var(--bg-light);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .time-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+        }
+
+        .time-card p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        /* ------------------- MISSION SECTION ------------------- */
+        .mission-section {
+            text-align: center;
+            padding: 6rem 1rem;
+        }
+
+        .mission-section h2 {
+            color: var(--secondary-color);
+            font-size: 2.5rem;
+        }
+
+        .mission-section p {
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            font-size: 1.2rem;
+        }
+
+        /* ------------------- MINISTRIES SECTION ------------------- */
+        .ministries-section h2 {
+            text-align: center;
+            color: var(--primary-color);
+        }
+
+        .ministry-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .ministry-card {
+            background-color: var(--bg-light);
+            padding: 1.5rem;
+            border-left: 5px solid var(--secondary-color);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            border-radius: 4px;
+        }
+
+        .ministry-card i {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 0.75rem;
+        }
+
+        /* ------------------- CONTACT & MAP SECTION ------------------- */
+        .contact-section {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            padding: 4rem 1rem;
+        }
+
+        .contact-content {
+            display: flex;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        .contact-info, .contact-map {
+            flex: 1;
+        }
+
+        .contact-info h2 {
+            color: var(--secondary-color);
+        }
+
+        .contact-item {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            font-size: 1.1rem;
+        }
+
+        .contact-item i {
+            margin-right: 10px;
+            font-size: 1.25rem;
+            color: var(--secondary-color);
+        }
+        
+        /* Map Placeholder - This will be the iframe area when embedded */
+        .contact-map {
+            background-color: rgba(255, 255, 255, 0.1);
+            height: 300px;
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-style: italic;
+        }
+
+        /* ------------------- FOOTER ------------------- */
+        .footer {
+            background-color: var(--text-dark);
+            color: var(--bg-cream);
+            text-align: center;
+            padding: 2rem 1rem;
+            font-size: 0.9rem;
+        }
+
+        .social-links {
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            color: var(--bg-cream);
+            font-size: 1.5rem;
+            margin: 0 0.5rem;
+        }
+
+        .social-links a:hover {
+            color: var(--secondary-color);
+        }
+        
+        /* ------------------- MEDIA QUERIES (Responsiveness) ------------------- */
+        @media (max-width: 850px) {
+            .hero {
+                padding: 6rem 1rem;
+            }
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            .times-grid, .contact-content {
+                flex-direction: column;
+            }
+            .contact-map {
+                height: 250px;
+            }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px; /* Adjust based on header height */
+                left: 0;
+                width: 100%;
+                background-color: var(--bg-light);
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .nav-links a {
+                padding: 1rem;
+                border-bottom: 1px solid var(--bg-cream);
+                text-align: center;
+            }
+            .menu-toggle {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="nav-content container">
+            <a href="#" class="logo">LKBC.org</a>
+            <nav>
+                <ul class="nav-links" id="navMenu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">Our Mission</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#ministries">Ministries</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="placeholder_link_for_resources">Resources</a></li>
+                    <li><a href="placeholder_link_for_livestream" class="btn btn-primary">Livestream <i class="fas fa-video"></i></a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle" aria-label="Toggle navigation menu">
+                <i class="fas fa-bars" id="menuIcon"></i>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Welcome to Lakewood Baptist Church</h1>
+            <p>Transforming people, by God’s grace and for His glory, into spiritually mature followers of Jesus.</p>
+            <a href="#times" class="btn btn-primary">Plan Your First Visit</a>
+            <a href="placeholder_link_for_give" class="btn btn-outline">Give Online</a>
+        </div>
+    </section>
+
+    <section class="times-section" id="times">
+        <div class="container">
+            <h2>Worship with Us</h2>
+            <p>We believe in gathering weekly to lift up Christ through Scripture, music, prayer, and gospel-centered teaching.</p>
+
+            <div class="times-grid">
+                <div class="time-card">
+                    <i class="fas fa-book-open"></i>
+                    <h3>Sunday School / Community Groups</h3>
+                    <p>Biblical community & teaching for every age.</p>
+                    <p><strong>9:30 AM</strong></p>
+                </div>
+                <div class="time-card">
+                    <i class="fas fa-church"></i>
+                    <h3>Morning Worship Service</h3>
+                    <p>The heartbeat of life at Lakewood. All are welcome!</p>
+                    <p><strong>10:45 AM</strong></p>
+                </div>
+                <div class="time-card">
+                    <i class="fas fa-cross"></i>
+                    <h3>Wednesday Evenings</h3>
+                    <p>Digging Deeper: Doctrine & Formation Studies.</p>
+                    <p><strong>6:30 PM</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="mission-section" id="about">
+        <div class="container">
+            <h2>Our Mission</h2>
+            <p>Our discipleship journey is rooted in truth and united in worship, guiding every person to glorify and enjoy God.</p>
+            <a href="placeholder_link_for_beliefs" class="btn btn-outline">Learn Our Beliefs</a>
+        </div>
+    </section>
+
+    <section class="ministries-section" id="ministries">
+        <div class="container">
+            <h2>Grow in Community</h2>
+            <div class="ministry-grid">
+                <div class="ministry-card">
+                    <i class="fas fa-child"></i>
+                    <h3>Children's Ministry (Kids)</h3>
+                    <p>Nurturing faith in our youngest members through age-appropriate teaching and safety-focused programs.</p>
+                </div>
+                <div class="ministry-card">
+                    <i class="fas fa-user-graduate"></i>
+                    <h3>Student Ministries</h3>
+                    <p>Equipping middle and high school students to own their faith through weekly teaching and fellowship.</p>
+                </div>
+                <div class="ministry-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Adult Discipleship</h3>
+                    <p>Classes for all life stages dedicated to consistent Bible study, fellowship, and application of Scripture.</p>
+                </div>
+                <div class="ministry-card">
+                    <i class="fas fa-hand-holding-heart"></i>
+                    <h3>Local Outreach</h3>
+                    <p>Serving our community in practical ways, showing the love of Christ through various missions projects.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+        <div class="container contact-content">
+            <div class="contact-info">
+                <h2>Get in Touch</h2>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>13803 Shelbyville Road, Louisville, KY 40245</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>502-244-7740</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>contact@lkbc.org (Placeholder)</span>
+                </div>
+                <a href="https://maps.google.com/?q=13803+Shelbyville+Road,+Louisville,+KY+40245" target="_blank" class="btn btn-outline" style="color: white; border-color: white;">Get Directions</a>
+            </div>
+            <div class="contact-map">
+                <p>Map will load here when using the full Embed URL feature.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2025 Lakewood Baptist Church. All Rights Reserved.</p>
+        <div class="social-links">
+            <a href="placeholder_facebook_link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="placeholder_instagram_link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="placeholder_youtube_link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navMenu = document.getElementById('navMenu');
+        const menuIcon = document.getElementById('menuIcon');
+
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            // Toggle icon from bars to close
+            if (navMenu.classList.contains('active')) {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-times');
+            } else {
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+            }
+        });
+    </script>
+
+</body>
+</html>
